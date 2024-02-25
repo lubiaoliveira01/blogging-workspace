@@ -100,6 +100,37 @@
           }
         }
       }
+    },
+    "blogging-lib": {
+      "projectType": "library",
+      "root": "projects/blogging-lib",
+      "sourceRoot": "projects/blogging-lib/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/blogging-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/blogging-lib/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/blogging-lib/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/blogging-lib/src/test.ts",
+            "tsConfig": "projects/blogging-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/blogging-lib/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "cli": {
