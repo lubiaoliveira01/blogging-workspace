@@ -1,0 +1,26 @@
+.content {
+  padding: 30px 0;
+}
+
+.title {
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.content-comment {
+  border-left: 3px solid #ff9b52;
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+.title-comment {
+  color: #017db5;
+  font-size: 16px;
+  padding-bottom: 15px;
+}
+
+.text-comment {
+  font-size: 18px;
+  line-height: 40px;
+  padding-bottom: 10px;
+}

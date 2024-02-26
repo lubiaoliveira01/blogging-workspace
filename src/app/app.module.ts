@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { SectionUserComponent } from './components/section/sectionUser/section-user.component';
+import { SectionCommentsComponent } from './components/section/sectionComments/section-comments.component';
 
 registerLocaleData(localePt);
 
@@ -19,6 +21,8 @@ registerLocaleData(localePt);
     HeaderComponent,
     HeroComponent,
     SectionComponent,
+    SectionUserComponent,
+    SectionCommentsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],

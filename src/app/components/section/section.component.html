@@ -1,20 +1,4 @@
-<div class="section" *ngFor="let section of listSectionUser">
-  <div>
-    <h1 class="title-section">{{ section.title }}</h1>
-    <p class="subtitle-section">
-      {{ section.subtitle }}
-    </p>
-  </div>
-  <div class="user-section">
-    <img class="user-avatar" src="../../../assets/images/avatar1.jpg" >
-    <div>
-      <p class="user-name">{{ section.author.username }}</p>
-      <p class="user-date">{{ section.timestamp | date : "d 'de' MMM, y" : 'pt-BR' }}</p>
-    </div>
-  </div>
-  <div>
-    <p class="text-section">
-      {{ section.content }}
-    </p>
-  </div>
+<div class="section">
+  <app-section-user></app-section-user>
+  <app-section-comments></app-section-comments>
 </div>
