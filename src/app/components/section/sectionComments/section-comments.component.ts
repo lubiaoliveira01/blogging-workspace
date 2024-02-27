@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SectionService } from 'src/app/services/section.service';
+import { SectionUser } from 'src/app/utils/types';
 
 @Component({
   selector: 'app-section-comments',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SectionCommentsComponent implements OnInit {
 
-  constructor() { }
+  listSectionComments: SectionUser[] = []
+
+  constructor(private service: SectionService) { }
 
   ngOnInit(): void {
+    this.service.getSection().subscribe((listSectionComments) => {
+      this.listSectionComments = listSectionComments
+    })
+  }
+
+  trackComments(index: number, comment: any) {
+    return comment ? comment.id : null
   }
 
 }

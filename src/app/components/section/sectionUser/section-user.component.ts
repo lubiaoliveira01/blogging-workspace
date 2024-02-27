@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ISectionUser } from './sectionUser';
-import { SectionUserService } from './sectionUser.service';
+import { SectionService } from 'src/app/services/section.service';
+import { SectionUser } from 'src/app/utils/types';
 
 @Component({
   selector: 'app-section-user',
@@ -9,12 +9,12 @@ import { SectionUserService } from './sectionUser.service';
 })
 export class SectionUserComponent implements OnInit {
 
-  listSectionUser: ISectionUser[] = []
+  listSectionUser: SectionUser[] = []
 
-  constructor(private service: SectionUserService) { }
+  constructor(private service: SectionService) { }
 
   ngOnInit(): void {
-    this.service.getSectionUser().subscribe((listSectionUser) => {
+    this.service.getSection().subscribe((listSectionUser) => {
       this.listSectionUser = listSectionUser
     })
   }
