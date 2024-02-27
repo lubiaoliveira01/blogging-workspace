@@ -3,6 +3,14 @@ interface IAuthor {
   username: string
 }
 
+export interface ISectionComments {
+  id: number
+  respondsTo: ISectionComments | null
+  author: IAuthor
+  timestamp: string
+  content: string
+}
+
 export interface ISectionUser {
   id?: number
   timestamp: string
@@ -10,4 +18,5 @@ export interface ISectionUser {
   title: string
   subtitle: string
   content: string
+  comments: ISectionComments[]
 }

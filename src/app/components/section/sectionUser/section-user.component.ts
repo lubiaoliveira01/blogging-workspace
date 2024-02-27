@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ISectionUser } from './sectionUser';
+import { ISectionUser } from '../sectionInterface';
 import { SectionUserService } from './sectionUser.service';
 
 @Component({
