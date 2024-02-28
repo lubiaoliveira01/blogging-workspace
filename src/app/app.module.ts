@@ -12,6 +12,7 @@ import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
 import { SectionUserComponent } from './components/section/sectionUser/section-user.component';
 import { SectionCommentsComponent } from './components/section/sectionComments/section-comments.component';
+import { ButtonComponent } from 'blogging-lib';
 
 registerLocaleData(localePt);
 
@@ -24,7 +25,12 @@ registerLocaleData(localePt);
     SectionUserComponent,
     SectionCommentsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ButtonComponent,
+  ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
   bootstrap: [AppComponent],
 })
