@@ -9,11 +9,21 @@
       "
     >
       <div class="content-comment" *ngIf="comment.respondsTo == null">
-        <p class="title-comment">{{ comment.author.username }}</p>
+        <p class="title-comment">{{ comment.author.username }} - {{ comment.timestamp | date : "d 'de' MMM y', às' hh'h'mm" : 'pt-BR' }}</p>
         <p class="text-comment">
           {{ comment.content }}
         </p>
-        <h2>botões comentário</h2>
+        <div class="comments-button">
+          <lib-button [variant]="'secondary'" [size]="'sm'" (click)="showhideUtility()">Responder</lib-button
+          >
+          <lib-button [variant]="'primary'" [size]="'sm'"
+          >Compartilhar</lib-button
+          >
+          <lib-button [variant]="'danger'" [size]="'sm'">Reportar</lib-button>
+          <div  *ngIf="visible">
+            <h1>Seção respondendo comentário</h1>
+          </div>
+        </div>
         <div *ngFor="let comment of item.comments; let y = index">
           <div
             class="content-comment"
@@ -23,7 +33,17 @@
             <p class="text-comment">
               {{ comment.content }}
             </p>
-            <h2>botões comentário</h2>
+            <div class="comments-button">
+              <lib-button [variant]="'secondary'" [size]="'sm'"
+                >Responder</lib-button
+              >
+              <lib-button [variant]="'primary'" [size]="'sm'"
+                >Compartilhar</lib-button
+              >
+              <lib-button [variant]="'danger'" [size]="'sm'"
+                >Reportar</lib-button
+              >
+            </div>
             <div *ngFor="let comment of item.comments">
               <div
                 class="content-comment"

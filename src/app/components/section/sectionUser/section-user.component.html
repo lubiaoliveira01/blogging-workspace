@@ -6,11 +6,43 @@
     </p>
   </div>
   <div class="user-section">
-    <img class="user-avatar" src="../../../assets/images/avatar1.jpg" >
+    <img class="user-avatar" src="../../../assets/images/avatar1.jpg" />
     <div>
-      <p class="user-name">{{ section.author.username }}</p>
-      <p class="user-date">{{ section.timestamp | date : "d 'de' MMM, y" : 'pt-BR' }}</p>
+      <button class="user-name" (click)="modal.toggle()">
+        {{ section.author.username }}
+      </button>
+      <p class="user-date">
+        {{ section.timestamp | date : "d 'de' MMM, y" : "pt-BR" }}
+      </p>
     </div>
+    <lib-modal #modal>
+      <div>
+        <div class="modal">
+          <img class="user-avatar" src="../../../assets/images/avatar1.jpg" />
+          <h1>{{ listUser.username }}</h1>
+        </div>
+        <p class="modal-member-since">
+          <i>
+          Data de filiação: {{ listUser.memberSince | date : "d 'de' MMMM, y" }}
+          </i>
+        </p>
+        <div *ngFor="let post of listUser.posts">
+          <h3>{{ post.title }}</h3>
+          <p><i>{{ post.subtitle }}</i></p>
+          <p class="post-content">{{ post.content }}</p>
+        </div>
+        <div class="modal-button">
+          <lib-button [variant]="'success'" [size]="'sm'" alt="adicionar"
+          >+ Adicionar</lib-button
+          >
+          <lib-button [variant]="'secondary'" [size]="'sm'"
+          >&times; Remover</lib-button
+          >
+          <lib-button [variant]="'danger'" [size]="'sm'">Reportar</lib-button>
+        </div>
+        <lib-button [variant]="'primary'">Mensagem</lib-button>
+      </div>
+    </lib-modal>
   </div>
   <div>
     <p class="text-section">
