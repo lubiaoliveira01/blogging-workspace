@@ -22,6 +22,9 @@
 
 .user-name {
   font-size: 12px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .user-date {
@@ -33,4 +36,35 @@
   font-size: 20px;
   padding-bottom: 20px;
   line-height: 40px;
+}
+
+.modal {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-member-since {
+  color:grey;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.modal-button {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  & button {
+    margin-right: 10px;
+  }
+}
+
+.post-content {
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 15px 0px;
+
 }
